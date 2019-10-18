@@ -56,7 +56,8 @@ done
 
 
 # Sync public keys from S3 bucket to local directory
-if (aws s3 sync s3://s3-bucket/ssh-public-keys/ \
+#if (aws s3 sync s3://s3-bucket/ssh-public-keys/ \
+if (aws s3 sync s3://${s3_path} \
                 /tmp/ssh-public-keys/           \
                 --exclude "*"                   \
                 --include "*.pub"               \
